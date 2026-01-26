@@ -18,7 +18,9 @@ export default defineNuxtConfig({
         {
           src: 'https://cdn.tailwindcss.com?plugins=forms,container-queries'
         }
-      ]
+      ],
+     
     }
+  
   }
 })
