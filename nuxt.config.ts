@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'km', class: 'light' },
-      title: 'Eternal Khmer Photography | ការថតរូប Pre-Wedding ដ៏ប្រណិត',
+      title: 'Pre-Wedding | ដ៏ប្រណិត',
       link: [
         {
           rel: 'stylesheet',

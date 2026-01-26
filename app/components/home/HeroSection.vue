@@ -21,15 +21,11 @@
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                         <button
-                            class="w-full sm:w-auto px-8 py-4 bg-primary text-charcoal font-bold rounded-xl hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                            class="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all">
                             មើលស្នាដៃ
                         </button>
-                        <button
-                            class="w-full sm:w-auto px-8 py-4 bg-white text-charcoal font-bold rounded-xl hover:bg-champagne transition-all flex items-center justify-center gap-2 shadow-lg">
-                            មើលស្នាដៃ
-                        </button>
-                        <button
-                            class="w-full sm:w-auto px-8 py-4 bg-white text-charcoal font-bold rounded-xl hover:bg-champagne transition-all flex items-center justify-center gap-2 shadow-lg">
+                        <button @click="openMessenger"
+                            class="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all">
                             <span class="material-symbols-outlined text-xl">send</span>
                             អញ្ជើញភ្ញៀវ
                         </button>
@@ -44,4 +40,8 @@
     </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const openMessenger = () => {
+    window.open("https://m.me/khfashionstudio", "_blank");
+};
+</script>
