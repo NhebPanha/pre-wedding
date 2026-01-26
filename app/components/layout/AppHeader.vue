@@ -9,8 +9,8 @@
                         style="font-variation-settings: 'FILL' 1">camera</span>
                 </div>
                 <div class="flex flex-col">
-                    <h1 class="text-xl font-black tracking-tighter leading-none">ETERNAL KHMER</h1>
-                    <span class="text-[10px] uppercase tracking-[0.3em] font-medium opacity-70">ស្ទូឌីយោថតរូប</span>
+                    <h1 class="text-xl font-black tracking-tighter leading-none">PANHA KHMER</h1>
+                    <span class="text-[10px] uppercase tracking-[0.3em] font-medium opacity-70">បញ្ញា ខ្មែរ</span>
                 </div>
             </div>
 
