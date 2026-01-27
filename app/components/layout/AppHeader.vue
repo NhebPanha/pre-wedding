@@ -15,7 +15,7 @@
             </div>
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-10">
+            <nav class="hidden md:flex items-center gap-10 preahvihear-regular">
                 <NuxtLink class="text-sm font-semibold hover:text-primary transition-colors" to="#">មើលស្នាដៃ</NuxtLink>
                 <NuxtLink class="text-sm font-semibold hover:text-primary transition-colors" to="#">កញ្ចប់សេវាកម្ម
                 </NuxtLink>
@@ -47,7 +47,7 @@
         <!-- Mobile Menu -->
         <transition name="slide-fade">
             <nav v-if="menuOpen"
-                class="md:hidden bg-background-light dark:bg-background-dark border-t border-champagne dark:border-white/10 px-6 py-4 flex flex-col gap-4">
+                class="md:hidden bg-background-light dark:bg-background-dark border-t border-champagne dark:border-white/10 px-6 py-4 flex flex-col gap-4 preahvihear-regular">
                 <NuxtLink class="text-sm font-semibold hover:text-primary transition-colors" to="#">មើលស្នាដៃ</NuxtLink>
                 <NuxtLink class="text-sm font-semibold hover:text-primary transition-colors" to="#">កញ្ចប់សេវាកម្ម
                 </NuxtLink>

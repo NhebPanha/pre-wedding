@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dekko&family=Konkhmer+Sleokchher&family=Noto+Serif+Khmer:wght@100..900&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moulpali&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
 body {
   font-family: 'Noto Serif Khmer', serif;
   background: #faf8f3;
@@ -5,4 +9,25 @@ body {
 }
 section {
   padding: 80px 20px;
+}
+.konkhmer-sleokchher-regular {
+  font-family: "Konkhmer Sleokchher", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.moulpali-regular {
+  font-family: "Moulpali", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dekko-regular {
+  font-family: "Dekko", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.preahvihear-regular {
+  font-family: "Preahvihear", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

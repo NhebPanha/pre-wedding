@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppHeader />
-    <main>
+    <main class="min-h-screen bg-background-light dark:bg-background-dark transition-colors">
       <slot />
     </main>
     <AppFooter />

@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  css: ['~/assets/css/tailwind.css'],
+  css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
   app: {
     head: {
       htmlAttrs: { lang: 'km', class: 'light' },

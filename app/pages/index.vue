@@ -3,7 +3,7 @@
     <HeroSection />
     <AboutSection />
     <GallerySection />
-    <!-- <PackageSection /> -->
+    <PackageSection />
     <GuestInvitationForm />
     <!-- <ContactSection /> -->
   </div>
