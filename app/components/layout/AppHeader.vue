@@ -18,9 +18,9 @@
           <div class="absolute -inset-1 bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 blur transition-opacity duration-300"></div>
         </div>
         <div class="flex flex-col">
-          <h1 class="text-lg md:text-xl font-black tracking-tighter leading-none">ETERNAL KHMER</h1>
+          <h1 class="text-lg md:text-xl font-black tracking-tighter leading-none">PANHA KHMER</h1>
           <span class="text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-medium opacity-70">
-            ស្ទូឌីយោថតរូប
+            បញ្ញា​​​ ខ្មែរ
           </span>
         </div>
       </NuxtLink>

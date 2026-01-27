@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dekko&family=Konkhmer+Sleokchher&family=Noto+Serif+Khmer:wght@100..900&family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Moulpali&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moul&family=Kantumruy+Pro:wght@400;700&display=swap');
 body {
   font-family: 'Noto Serif Khmer', serif;
   background: #faf8f3;
@@ -30,4 +31,12 @@ section {
   font-family: "Preahvihear", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.font-moul {
+  font-family: 'Moul', serif;
+}
+
+section {
+  font-family: 'Kantumruy Pro', sans-serif;
 }
