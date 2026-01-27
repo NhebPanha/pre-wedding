@@ -2,16 +2,17 @@
     <div class="bg-white min-h-screen p-8 font-serif">
         <section class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 mb-20">
             <div class="w-full md:w-1/3">
-                <div class="bg-white rounded-3xl p-4 shadow-2xl border border-gray-100 text-center">
+                <div class="bg-yellow-10 rounded-3xl p-4 shadow-2xl border border-gray-100 text-center">
                     <img src="https://i.pinimg.com/736x/30/a8/87/30a8873195203d2f8197c7b57241df7b.jpg"
                         class="rounded-2xl w-full h-64 object-cover mb-6" alt="Couple" />
                     <div class="text-yellow-500 text-2xl mb-2">♥</div>
                     <h2 class="text-2xl font-bold mb-1">រត្នៈ និង សុម៉ាលី</h2>
                     <p class="text-yellow-600 text-sm mb-4">បង្ហាញការអញ្ជើញ</p>
                     <p class="text-gray-400 text-xs mb-6">២៩ ធ្នូ ២០២៤</p>
-                    <button class="bg-yellow-400 text-black px-8 py-2 rounded-full font-bold w-full">
+                    <button class="bg-black/10 backdrop-blur-md border border-white/30 text-white font-bold text-black px-8 py-2 rounded-full font-bold w-full">
                         មើលរូបភាពអញ្ជើញ
                     </button>
+                    <!-- w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all -->
                 </div>
             </div>
 
