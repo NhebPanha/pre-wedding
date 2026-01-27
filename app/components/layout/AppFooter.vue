@@ -1,67 +1,80 @@
 <template>
-    <footer class="bg-[#0a2342] text-white pt-24">
-        <!-- Call to Action -->
-        <div class="max-w-5xl mx-auto text-center px-6">
-            <h2 class="font-moul text-2xl md:text-3xl leading-relaxed mb-6">
-                ត្រៀមខ្លួនសម្រាប់រឿងរ៉ាវស្នេហ៍ដ៏អមតៈរបស់អ្នកឬនៅ?
-            </h2>
+  <footer class="bg-[#0B1E3B] text-white pt-20 pb-6">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <div class="w-12 h-12 bg-gray-400/30 rounded-md mx-auto mb-10">
+         <span
+              class="material-symbols-outlined text-3xl md:text-4xl text-yellow-500"
+              style="font-variation-settings: 'FILL' 1"
+            >
+              photo_camera
+            </span>
+      </div>
 
-            <p class="text-sm text-[#d4af37] opacity-90 mb-10 font-khmer">
-                យើងខ្ញុំប្តេជ្ញាចិត្តផ្តិតយកគ្រប់អារម្មណ៍
-                និងភាពស្រស់ស្អាតនៃពេលវេលាដ៏មានតម្លៃ
-            </p>
+      <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight tracking-wide font-khmer">
+        ត្រៀមខ្លួនសម្រាប់រឿងរ៉ាវស្រស់ស្អាតរបស់អ្នកហើយឬនៅ?
+      </h2>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                    class="bg-[#d4af37] text-[#0a2342] font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2">
-                    កក់ថ្ងៃថតរូប
-                    <span class="material-symbols-outlined text-base">calendar_month</span>
-                </button>
+      <p class="text-[#d4af37] text-base md:text-lg opacity-80 mb-12 max-w-2xl mx-auto leading-relaxed">
+        យើងមានការទទួលសក់ក្នុងចំនួនកំណត់សម្រាប់រដូវកាលខាងមុខនេះ។ ចូរយើងរួមគ្នាបង្កើតអនុស្សាវរីយ៍ដ៏អស្ចារ្យ។
+      </p>
 
-                <button
-                    class="border border-[#d4af37] text-[#d4af37] font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2">
-                    ទំនាក់ទំនងយើង
-                    <span class="material-symbols-outlined text-base">mail</span>
-                </button>
-            </div>
+      <div class="flex flex-col sm:flex-row gap-5 justify-center mb-24">
+        <button
+          class="bg-[#EBC410] text-[#0B1E3B] font-black px-10 py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-yellow-400 transition-all transform active:scale-95 shadow-lg shadow-yellow-500/10"
+        >
+          កក់ការថតរបស់អ្នក
+          <span class="material-symbols-outlined text-xl">calendar_month</span>
+        </button>
+
+        <button
+          class="border-2 border-[#EBC410] text-[#EBC410] font-black px-10 py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-[#EBC410]/10 transition-all transform active:scale-95"
+        >
+          សាកសួរតម្លៃសេវាកម្ម
+          <span class="material-symbols-outlined text-xl">mail</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto border-t border-white/10 mb-12"></div>
+
+    <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+      
+      <div class="flex items-center gap-3 text-[#EBC410]">
+        <div class="w-6 h-6  rounded-sm flex items-center justify-center">
+            <span
+              class="material-symbols-outlined text-3xl md:text-4xl text-yellow-500"
+              style="font-variation-settings: 'FILL' 1"
+            >
+              camera
+            </span>
         </div>
+        <span class="uppercase font-black tracking-[0.2em] text-sm">ETERNAL STORY</span>
+      </div>
 
-        <!-- Divider -->
-        <div class="border-t border-white/10 mt-20"></div>
+      <nav class="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm font-medium text-white/80">
+        <NuxtLink to="/" class="hover:text-[#EBC410] transition-colors">ទីតាំងដើម</NuxtLink>
+        <NuxtLink to="/gallery" class="hover:text-[#EBC410] transition-colors">ការបង្ហាញរូបភាព</NuxtLink>
+        <NuxtLink to="/services" class="hover:text-[#EBC410] transition-colors">សេវាកម្ម</NuxtLink>
+        <NuxtLink to="/contact" class="hover:text-[#EBC410] transition-colors">ទំនាក់ទំនង</NuxtLink>
+      </nav>
 
-        <!-- Bottom Footer -->
-        <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <!-- Brand -->
-            <div class="flex items-center gap-2 text-[#d4af37] font-bold tracking-widest">
-                <span class="text-xl">⌛</span>
-                <span class="uppercase">ETERNAL STORY</span>
-            </div>
+      <div class="flex gap-6 text-[#EBC410]/80">
+        <button class="hover:text-[#EBC410] hover:scale-110 transition">
+          <span class="material-symbols-outlined text-xl">photo_camera</span>
+        </button>
+        <button class="hover:text-[#EBC410] hover:scale-110 transition">
+          <span class="material-symbols-outlined text-xl">play_circle</span>
+        </button>
+        <button class="hover:text-[#EBC410] hover:scale-110 transition">
+          <span class="material-symbols-outlined text-xl">language</span>
+        </button>
+      </div>
+    </div>
 
-            <!-- Menu -->
-            <nav class="flex gap-8 text-sm text-white/70 font-khmer">
-                <NuxtLink to="/" class="hover:text-[#d4af37]">ទំព័រដើម</NuxtLink>
-                <NuxtLink to="/gallery" class="hover:text-[#d4af37]">ស្នាដៃ</NuxtLink>
-                <NuxtLink to="/packages" class="hover:text-[#d4af37]">កញ្ចប់សេវា</NuxtLink>
-                <NuxtLink to="/contact" class="hover:text-[#d4af37]">ទំនាក់ទំនង</NuxtLink>
-            </nav>
-
-            <!-- Social -->
-            <div class="flex gap-4 text-[#d4af37]">
-                <button class="hover:scale-110 transition">
-                    <span class="material-symbols-outlined">photo_camera</span>
-                </button>
-                <button class="hover:scale-110 transition">
-                    <span class="material-symbols-outlined">play_circle</span>
-                </button>
-                <button class="hover:scale-110 transition">
-                    <span class="material-symbols-outlined">language</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Copyright -->
-        <p class="text-center text-xs text-white/40 pb-6">
-            © 2025 Eternal Story Photography. រក្សាសិទ្ធិគ្រប់យ៉ាង
-        </p>
-    </footer>
+    <div class="mt-16 text-center">
+      <p class="text-[10px] uppercase tracking-widest text-white/30">
+        © 2026 Eternal Story Photography. រក្សាសិទ្ធិគ្រប់យ៉ាង
+      </p>
+    </div>
+  </footer>
 </template>
