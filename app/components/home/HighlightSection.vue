@@ -4,9 +4,9 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         <div class="flex justify-center lg:justify-start">
-          <div class="w-full max-w-[340px] bg-white rounded-[40px] shadow-2xl p-5 border border-gray-50">
+          <div class="w-full max-w-[450px] bg-white rounded-[40px] shadow-2xl p-5 border border-gray-50">
             <div class="overflow-hidden rounded-[30px] aspect-[4/5]">
-              <img src="https://i.pinimg.com/736x/8f/8f/db/8f8fdb50f2cf6bd6bfe7b34ba14585c3.jpg" alt="couple"
+              <img src="/images/image16.jpg" alt="couple"
                 class="w-full h-full object-cover" />
             </div>
 
@@ -17,7 +17,7 @@
               </span>
 
               <h3 class="font-khmer text-2xl font-black text-gray-800 mt-2">
-                រត្នៈ និង សុម៉ាលី
+                ភា និង ្រសីល័ក្ខ
               </h3>
 
               <p class="text-yellow-600/70 text-xs font-bold uppercase tracking-widest mt-1 mb-4">
@@ -80,7 +80,6 @@
               </p>
             </div>
           </div>
-
           <div class="pt-6">
             <button
               class="flex items-center gap-3 bg-[#1a1a1a] text-white px-10 py-4 rounded-2xl hover:bg-black transition-all group">

@@ -51,12 +51,11 @@
 <script setup>
 
 const images = [
-  'https://i.pinimg.com/1200x/8e/8c/c7/8e8cc7c156b7218b02ee9e79d09c33c3.jpg',
-  'https://i.pinimg.com/1200x/3d/fe/ae/3dfeaefab1e32f8fb34f29f579b84c07.jpg',
-  'https://i.pinimg.com/736x/8f/8f/db/8f8fdb50f2cf6bd6bfe7b34ba14585c3.jpg'
+  '/images/image19.jpg',
+  '/images/card_image.jpg',
+  '/images/image3.jpg',
 ]
 </script>
-
 <style scoped>
 
 </style>

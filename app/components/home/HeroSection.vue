@@ -4,7 +4,7 @@
             <div
                 class="relative min-h-[700px] flex flex-col items-center justify-center text-center px-6 rounded-3xl overflow-hidden shadow-2xl">
                 <div class="absolute inset-0 bg-cover bg-center"
-                    style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://i.pinimg.com/1200x/68/ab/ff/68abffe20f9d59367e56e32360899e75.jpg');">
+                    style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('/images/banner_image.png');">
                 </div>
                 <div class="relative z-10 max-w-4xl space-y-6">
                     <div
