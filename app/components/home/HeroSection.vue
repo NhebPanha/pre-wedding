@@ -12,10 +12,13 @@
                         <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                         ប្រពៃណី និង សិល្បៈ
                     </div>
-                    <h1 class="text-4xl md:text-7xl font-black text-white leading-[1.3] tracking-tight">
-                        ការផ្តិតយកចំណងស្នេហ៍ <br /><span class="text-primary italic text-yellow-500">ដ៏នៅអមតៈ</span> របស់លោកអ្នក
+                    <h1
+                        class="text-4xl md:text-7xl font-black text-white leading-[1.3] tracking-tight konkhmer-sleokchher-regular">
+                        ការផ្តិតយកចំណងស្នេហ៍ <br /><span class="text-primary italic text-yellow-500">ដ៏នៅអមតះ</span>
+                        របស់លោកអ្នក
                     </h1>
-                    <p class="text-white/80 text-lg md:text-xl font-normal max-w-2xl mx-auto leading-relaxed preahvihear-regular">
+                    <p
+                        class="text-white/80 text-lg md:text-xl font-normal max-w-2xl mx-auto leading-relaxed preahvihear-regular">
                         យើងខ្ញុំរួមបញ្ចូលគ្នានូវភាពស្រស់ស្អាតមិនចេះរីងស្ងួតនៃសូត្រខ្មែរ និងគ្រឿងអលង្ការមាស
                         ជាមួយនឹងបច្ចេកទេសថតរូបទំនើប ដើម្បីបង្កើតអនុស្សាវរីយ៍ដែលស្ថិតស្ថេរជាដរាប។
                     </p>
