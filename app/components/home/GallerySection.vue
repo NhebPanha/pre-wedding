@@ -1,16 +1,69 @@
 <template>
-    <section class="py-24 px-6">
-        <h2 class="text-3xl font-extrabold mb-12">វគ្គថតរូបលេចធ្លោ</h2>
+  <section class="max-w-[1440px] mx-auto py-16 px-6 md:px-12 bg-[#fafafa]">
+    <div class="flex justify-between items-end mb-12">
+      <div>
+        <span class="text-[10px] uppercase tracking-widest text-yellow-400 mb-2 block font-bold">រូបភាពអាពាហ៍ពិពាហ៍</span>
+        <h2 class="text-2xl md:text-3xl font-black text-[#1a1a1a] font-moul">
+          វគ្គថតរូបលេចធ្លោ
+        </h2>
+      </div>
+      <button class="hidden md:flex items-center gap-2 text-sm font-bold border-b-2 border-black pb-1 hover:opacity-60 transition-all">
+        មើលរឿងស្នាដៃទាំងអស់ <span class="material-symbols-outlined text-sm">add</span>
+      </button>
+    </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <div v-for="(img, i) in images" :key="i" class="aspect-[3/4] rounded-2xl bg-cover bg-center shadow-lg"
-                :style="{ backgroundImage: `url(${img})` }" />
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 items-center">
+      <div class="group cursor-pointer">
+        <div 
+          class="aspect-[4/5] overflow-hidden rounded-[2rem] shadow-sm transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2"
+        >
+          <img :src="images[0]" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Wedding 1">
         </div>
-    </section>
+      </div>
+
+      <div class="group cursor-pointer md:mt-12">
+        <div 
+          class="aspect-[4/5] overflow-hidden rounded-[2rem] shadow-sm transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2"
+        >
+          <img :src="images[1]" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Wedding 2">
+        </div>
+      </div>
+
+      <div class="group cursor-pointer">
+        <div 
+          class="aspect-[4/5] overflow-hidden rounded-[2rem] shadow-sm transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2"
+        >
+          <img :src="images[2]" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Wedding 3">
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-10 md:hidden flex justify-center">
+      <button class="px-8 py-3 border border-black rounded-full font-bold text-sm">
+        មើលទាំងអស់
+      </button>
+    </div>
+  </section>
 </template>
 
 <script setup>
+
 const images = [
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBPPYMSOMVkJHHp1vJLoMu5B4AGxxyLJ-15uKW-jpg85o6p8sELpzYOFqu0DjmzAkc990zJgmaByZipi5XhF--AdWGpl_RLUowOg-rKy0q_ehwP0jocH6r2-fx4P93zbaKcd-_zP_zerkdu3RIvhh_ddaxMZleyAZs9Kxd_ZvPy1uQ76XoVPhrYj_ioi1RcamxHG_c4UCYTtv5FPaMmodQAqEkMOUCLD3I4ULy-8Avbuv07KvRbvUDKo6IyfgcmhAxo4V4vz7vWug'
+  'https://i.pinimg.com/1200x/8e/8c/c7/8e8cc7c156b7218b02ee9e79d09c33c3.jpg', 
+  'https://i.pinimg.com/1200x/3d/fe/ae/3dfeaefab1e32f8fb34f29f579b84c07.jpg',
+  'https://i.pinimg.com/736x/8f/8f/db/8f8fdb50f2cf6bd6bfe7b34ba14585c3.jpg' 
 ]
 </script>
+
+<style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Moul&family=Kantumruy+Pro:wght@400;700&display=swap');
+
+.font-moul {
+  font-family: 'Moul', serif;
+}
+
+section {
+  font-family: 'Kantumruy Pro', sans-serif;
+}
+</style>

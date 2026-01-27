@@ -1,9 +1,12 @@
 <template>
   <CardWrapper>
-    <img :src="pkg.image" />
-    <h3>{{ pkg.title }}</h3>
+     <img
+    :src="pkg.image"
+    class="h-[280px] w-full object-cover rounded-lg"
+  />
+    <h3 class=" mt-2">{{ pkg.title }}</h3>
     <p>{{ pkg.price }}</p>
-    <AppButton label="កក់ឥឡូវនេះ" />
+    <AppButton class="mt-2" label="កក់ឥឡូវនេះ" />
   </CardWrapper>
 </template>
 

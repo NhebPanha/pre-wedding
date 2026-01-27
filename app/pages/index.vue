@@ -2,10 +2,11 @@
   <div>
     <HeroSection />
     <AboutSection />
+    <HighlightSection/>
     <GallerySection />
-    <!-- <PackageSection /> -->
+    <PackageSection/>
     <GuestInvitationForm />
-    <!-- <ContactSection /> -->
+    
   </div>
 </template>
 
@@ -15,5 +16,6 @@ import AboutSection from '~/components/home/AboutSection.vue'
 import GallerySection from '~/components/home/GallerySection.vue'
 import PackageSection from '~/components/home/PackageSection.vue'
 import GuestInvitationForm from '~/components/home/GuestInvitationForm.vue'
-import ContactSection from '~/components/home/ContactSection.vue'
+import HighlightSection from '~/components/home/HighlightSection.vue'
+
 </script>

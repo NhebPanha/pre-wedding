@@ -2,7 +2,9 @@
   <div class="section-title">
     <h2>
       <slot />
+      ជ្រើសរើសកញ្ចប់សេវាកម្ម
     </h2>
+    
   </div>
 </template>
 
