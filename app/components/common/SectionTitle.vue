@@ -15,7 +15,6 @@
 .section-title {
   margin-bottom: 24px;
 }
-
 .section-title h2 {
   font-size: 28px;
   font-weight: 600;

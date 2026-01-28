@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
+  // CSS
   css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
+
+  // App Configuration
   app: {
     head: {
       htmlAttrs: { lang: 'km', class: 'light' },
@@ -19,8 +22,24 @@ export default defineNuxtConfig({
           src: 'https://cdn.tailwindcss.com?plugins=forms,container-queries'
         }
       ],
-     
     }
-  
+  },
+
+  // Router Configuration
+  router: {
+    options: {
+      hashMode: false,
+      linkActiveClass: 'active',
+      linkExactActiveClass: 'exact-active',
+    }
+  },
+
+  // Route Rules
+  routeRules: {
+    // Static pages - pre-render at build time
+    '/': { prerender: true },
+    '/gallery': { prerender: true },
+    '/services': { prerender: true },
+    '/contact': { prerender: true },
   }
 })

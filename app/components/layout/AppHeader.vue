@@ -32,10 +32,10 @@
           :key="link.id"
           :to="link.to"
           class="relative text-sm font-semibold hover:text-primary transition-colors duration-300 px-1 py-2 group"
-          active-class="text-primary"
+          :class="{ 'text-primary': isActive(link.to) }"
         >
           {{ link.label }}
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+          <span class="absolute bottom-0 left-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" :class="{ 'w-full': isActive(link.to), 'w-0': !isActive(link.to) }"></span>
         </NuxtLink>
       </nav>
 
@@ -122,14 +122,25 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const menuOpen = ref(false)
 
+const isActive = (path: string) => {
+  return route.path === path
+}
+
+// const navLinks = [
+//   { id: 1, label: 'មើលស្នាដៃ', to: '#portfolio', icon: 'collections' },
+//   { id: 2, label: 'កញ្ចប់សេវាកម្ម', to: '#services', icon: 'package' },
+//   { id: 3, label: 'លិខិតអញ្ជើញឌីជីថល', to: '#invitations', icon: 'mail' },
+//   { id: 4, label: 'មតិអតិថិជន', to: '#testimonials', icon: 'star' }]
 const navLinks = [
-  { id: 1, label: 'មើលស្នាដៃ', to: '#portfolio', icon: 'collections' },
-  { id: 2, label: 'កញ្ចប់សេវាកម្ម', to: '#services', icon: 'package' },
-  { id: 3, label: 'លិខិតអញ្ជើញឌីជីថល', to: '#invitations', icon: 'mail' },
-  { id: 4, label: 'មតិអតិថិជន', to: '#testimonials', icon: 'star' }
+  { id: 1, label: 'មើលស្នាដៃ', to: '/', icon: 'home' },
+  { id: 2, label: 'កញ្ចប់សេវាកម្ម', to: '/gallery', icon: 'collections' },
+  { id: 3, label: 'លិខិតអញ្ជើញឌីជីថល', to: '/services', icon: 'package' },
+  { id: 4, label: 'មតិអតិថិជន', to: '/contact', icon: 'mail' }
 ]
 
 const handleBooking = () => {
