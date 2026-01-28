@@ -17,7 +17,7 @@
               </span>
 
               <h3 class="font-khmer text-2xl font-black text-gray-800 mt-2">
-                ភា និង ្រសីល័ក្ខ
+                ភា​ និង ស្រីល័ក្ខ
               </h3>
 
               <p class="text-yellow-600/70 text-xs font-bold uppercase tracking-widest mt-1 mb-4">

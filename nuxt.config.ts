@@ -22,6 +22,7 @@ export default defineNuxtConfig({
           src: 'https://cdn.tailwindcss.com?plugins=forms,container-queries'
         }
       ],
+<<<<<<< HEAD
     }
   },
 
@@ -41,5 +42,15 @@ export default defineNuxtConfig({
     '/gallery': { prerender: true },
     '/services': { prerender: true },
     '/contact': { prerender: true },
+=======
+
+    }
+  },
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+    }
+>>>>>>> origin/develop
   }
 })
