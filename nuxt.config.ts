@@ -19,8 +19,13 @@ export default defineNuxtConfig({
           src: 'https://cdn.tailwindcss.com?plugins=forms,container-queries'
         }
       ],
-     
+
     }
-  
+  },
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+    }
   }
 })
