@@ -41,5 +41,11 @@ export default defineNuxtConfig({
     '/gallery': { prerender: true },
     '/services': { prerender: true },
     '/contact': { prerender: true },
+  },
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+    }
   }
 })
