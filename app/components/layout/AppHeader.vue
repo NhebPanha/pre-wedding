@@ -149,7 +149,6 @@ const toggleUserMenu = () => {
 }
 
 </script>
-
 <style scoped>
 /* Active link styles for desktop */
 .router-link-active:not(.text-primary) {
