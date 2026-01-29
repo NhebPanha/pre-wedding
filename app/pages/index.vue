@@ -4,9 +4,9 @@
     <AboutSection />
     <HighlightSection/>
     <GallerySection />
-    <PackageSection/>
+    <!-- <PackageSection/> -->
     <GuestInvitationForm />
-    
+    <Map />
   </div>
 </template>
 
@@ -17,5 +17,6 @@ import GallerySection from '~/components/home/GallerySection.vue'
 import PackageSection from '~/components/home/PackageSection.vue'
 import GuestInvitationForm from '~/components/home/GuestInvitationForm.vue'
 import HighlightSection from '~/components/home/HighlightSection.vue'
+import Map from '~/components/home/Map.vue'
 
 </script>
