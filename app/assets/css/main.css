@@ -122,3 +122,134 @@ h1, h2, h3, .font-moul {
   background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAl3Pz0ikioY9T9LMO7zsOssFTgyAl4I8JSULfEWMrUE5U_2Uz5h6nh4ype6kuhbzRWmt-O_9HX9vHgHwUZbdjHCDOVCOAbWiOquNVdRc-PotmjWM6pPYaUFNoFfMsjcLBxQF2FhyaMZtmTcvHn1hCXU5VP__z0y5HxSxMThjD8YuvDZt7dkqWpBxTfxFvQh-_0GYar-MfiAplFXtMB93VKUduunMCSREkSc_OUlX9-AS3rWVcxCL0nVSKRT2v-LVSJqRR_A30HQA');
   background-size: 300px 300px;
 }
+:root {
+  --primary: #D4AF37;
+  --primary-deep: #B8860B;
+  --champagne: #F7F3E9;
+  --charcoal: #2F2F2F;
+  --royal-blue: #002366;
+  --white-glass: rgba(255, 255, 255, 0.8);
+}
+
+body {
+  background-color: var(--champagne);
+  color: var(--charcoal);
+  font-family: 'Kantumruy Pro', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-moul {
+  font-family: 'Moul', serif;
+}
+
+
+
+
+/* bloc form guest */
+/* assets/css/main.css */
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Moul&family=Hanuman:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1');
+
+:root {
+    --primary: #D4AF37;
+    --gold-deep: #B8860B;
+    --champagne: #F7F3E9;
+    --royal-blue: #002366;
+    --charcoal: #2F2F2F;
+}
+
+body {
+    background-color: var(--champagne);
+    color: var(--charcoal);
+    font-family: 'Kantumruy Pro', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.font-moul { font-family: 'Moul', serif; }
+
+/* Silk Background Texture */
+.silk-texture {
+    background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+}
+
+/* Elegant Gold Border */
+.gold-frame::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Hero Parallax */
+.hero-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+}
+
+/* Countdown Components */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 96px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+/* RSVP Form Styling */
+.rsvp-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.minimal-input {
+    border: 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    background: transparent;
+    padding: 12px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.25rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.minimal-input:focus {
+    border-bottom-color: var(--primary);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.25rem;
+    background: linear-gradient(to right, var(--primary), var(--gold-deep));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Moul', serif;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
