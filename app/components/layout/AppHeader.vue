@@ -47,7 +47,7 @@
           @click="handleBooking"
         >
           <span class="material-symbols-outlined text-base">calendar_month</span>
-          <span>កក់ការថតរូប</span>
+          <span>ថ្ងៃរៀបការ</span>
         </button>
 
        
@@ -112,7 +112,7 @@
             @click="handleBooking"
           >
             <span class="material-symbols-outlined text-lg">calendar_month</span>
-            <span>កក់ការថតរូប</span>
+            <span>ថ្ងៃរៀបការ</span>
           </button>
         </div>
       </nav>
@@ -130,12 +130,6 @@ const menuOpen = ref(false)
 const isActive = (path: string) => {
   return route.path === path
 }
-
-// const navLinks = [
-//   { id: 1, label: 'មើលស្នាដៃ', to: '#portfolio', icon: 'collections' },
-//   { id: 2, label: 'កញ្ចប់សេវាកម្ម', to: '#services', icon: 'package' },
-//   { id: 3, label: 'លិខិតអញ្ជើញឌីជីថល', to: '#invitations', icon: 'mail' },
-//   { id: 4, label: 'មតិអតិថិជន', to: '#testimonials', icon: 'star' }]
 const navLinks = [
   { id: 1, label: 'មើលស្នាដៃ', to: '/', icon: 'home' },
   { id: 2, label: 'កញ្ចប់សេវាកម្ម', to: '/gallery', icon: 'collections' },

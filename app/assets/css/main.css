@@ -85,3 +85,40 @@ section {
   @apply bg-gradient-to-r from-primary via-gold-deep to-primary
   text-white font-bold rounded-xl transition-all shadow-lg;
 }
+
+/* Define the design tokens from your previous config */
+:root {
+  --primary: #D4AF37;
+  --champagne: #F7F3E9;
+  --silk-bg: #FAF9F6;
+  --charcoal: #2F2F2F;
+  --royal-blue: #002366;
+  --gold-deep: #B8860B;
+  
+  --font-moul: 'Moul', serif;
+  --font-body: 'Kantumruy Pro', sans-serif;
+}
+
+/* Base setup to replace Tailwind's reset */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--champagne);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, .font-moul {
+  font-family: var(--font-moul);
+}
+
+/* Background patterns using CSS variables */
+.romduol-pattern {
+  position: fixed;
+  inset: 0;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAl3Pz0ikioY9T9LMO7zsOssFTgyAl4I8JSULfEWMrUE5U_2Uz5h6nh4ype6kuhbzRWmt-O_9HX9vHgHwUZbdjHCDOVCOAbWiOquNVdRc-PotmjWM6pPYaUFNoFfMsjcLBxQF2FhyaMZtmTcvHn1hCXU5VP__z0y5HxSxMThjD8YuvDZt7dkqWpBxTfxFvQh-_0GYar-MfiAplFXtMB93VKUduunMCSREkSc_OUlX9-AS3rWVcxCL0nVSKRT2v-LVSJqRR_A30HQA');
+  background-size: 300px 300px;
+}
