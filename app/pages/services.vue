@@ -21,7 +21,6 @@ const themes = [
 
 const guestName = ref('');
 const guestList = ref<{name: string}[]>([]);
-
 const addGuest = () => {
   if (guestName.value) {
     guestList.value.push({ name: guestName.value });
@@ -215,56 +214,6 @@ watch(() => invitationData.value.customColor, (newColor) => {
                   }"
                 ></div>
               </div>
-<<<<<<< HEAD
-            </section>
-            <section class="premium-card">
-              <div class="kbach-ornament"></div>
-              <div class="p-10">
-                <div class="flex items-center gap-4 mb-10">
-                  <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    <span class="material-symbols-outlined">event_available</span>
-                  </div>
-                  <h2 class="text-2xl font-moul">ព័ត៌មានកម្មវិធី</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                  <div class="flex flex-col">
-                    <label class="input-label">កាលបរិច្ឆេទប្រារព្ធពិធី</label>
-                    <input v-model="invitationData.date" class="minimal-input" type="date" />
-                  </div>
-                  <div class="flex flex-col">
-                    <label class="input-label">ម៉ោងចាប់ផ្ដើម</label>
-                    <input v-model="invitationData.time" class="minimal-input" type="time" />
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="premium-card">
-              <div class="kbach-ornament"></div>
-              <div class="p-10">
-                <div class="flex items-center gap-4 mb-10">
-                  <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    <span class="material-symbols-outlined">auto_fix_high</span>
-                  </div>
-                  <h2 class="text-2xl font-moul">ជ្រើសរើសម៉ូដរចនា</h2>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                  <label v-for="theme in themes" :key="theme.id" class="relative cursor-pointer group">
-                    <input type="radio" v-model="invitationData.theme" :value="theme.id" class="peer sr-only" />
-                    <div
-                      class="p-2 border-2 border-transparent peer-checked:border-primary rounded-2xl transition-all duration-300">
-                      <div
-                        :class="['w-full aspect-[4/5] bg-gradient-to-br rounded-xl shadow-lg flex items-center justify-center group-hover:scale-105 transition-transform', theme.gradient]">
-                        <span class="text-white/60 material-symbols-outlined text-5xl">{{ theme.icon }}</span>
-                      </div>
-                      <div class="mt-4 text-center">
-                        <span class="text-[12px] font-bold text-charcoal/80 uppercase tracking-tighter block">{{
-                          theme.name }}</span>
-                        <div class="w-4 h-4 rounded-full mx-auto mt-2" :style="{ backgroundColor: theme.color }"></div>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-=======
             </div>
             
             
@@ -285,7 +234,6 @@ watch(() => invitationData.value.customColor, (newColor) => {
                   placeholder="#HEX"
                   class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"
                 />
->>>>>>> origin/develop2
               </div>
               <div class="mt-3 grid grid-cols-5 gap-2">
                 <div 
@@ -341,77 +289,6 @@ watch(() => invitationData.value.customColor, (newColor) => {
           </div>
         </div>
 
-<<<<<<< HEAD
-          <div class="lg:col-span-5 relative">
-            <div class="sticky top-32 flex flex-col items-center">
-              <div class="mb-8 flex flex-col items-center">
-                <span class="text-[11px] font-bold uppercase tracking-[0.5em] text-primary mb-3">Live Preview</span>
-                <div class="flex gap-1.5">
-                  <div class="w-1 h-1 rounded-full bg-primary/40"></div>
-                  <div class="w-12 h-[1px] bg-primary/40 mt-0.5"></div>
-                  <div class="w-1 h-1 rounded-full bg-primary/40"></div>
-                </div>
-              </div>
-              <div class="phone-mockup">
-                <div class="phone-notch"></div>
-                <div class="phone-screen">
-                  <div class="h-full w-full flex flex-col bg-[#FAF9F6] relative overflow-hidden">
-                    <div
-                      class="h-[42%] bg-cover bg-center relative bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPPYMSOMVkJHHp1vJLoMu5B4AGxxyLJ-15uKW-jpg85o6p8sELpzYOFqu0DjmzAkc990zJgmaByZipi5XhF--AdWGpl_RLUowOg-rKy0q_ehwP0jocH6r2-fx4P93zbaKcd-_zP_zerkdu3RIvhh_ddaxMZleyAZs9Kxd_ZvPy1uQ76XoVPhrYj_ioi1RcamxHG_c4UCYTtv5FPaMmodQAqEkMOUCLD3I4ULy-8Avbuv07KvRbvUDKo6IyfgcmhAxo4V4vz7vWug')]">
-                      <div class="absolute inset-0 bg-gradient-to-t from-[#FAF9F6] via-transparent to-transparent">
-                      </div>
-                      <div class="absolute top-12 left-0 right-0 flex justify-center">
-                        <div
-                          class="w-14 h-14 border border-white/40 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md">
-                          <span class="material-symbols-outlined text-white text-2xl fill-icon">favorite</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex-1 px-8 pb-10 flex flex-col justify-between text-center relative">
-                      <div class="space-y-4 pt-4">
-                        <h4 class="text-2xl font-moul text-royal-blue leading-relaxed">
-                          {{ invitationData.groomName || 'វណ្ណៈ' }} & {{ invitationData.brideName || 'សុម៉ាលី' }}
-                        </h4>
-                        <div class="flex items-center justify-center gap-4">
-                          <div class="h-[1px] w-6 bg-primary/40"></div>
-                          <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary">Wedding
-                            Party</span>
-                          <div class="h-[1px] w-6 bg-primary/40"></div>
-                        </div>
-                        <p class="text-[12px] leading-relaxed italic text-charcoal/70 px-2 font-light">
-                          "{{ invitationData.message || 'សេចក្តីស្រលាញ់ដែលផ្តើមចេញពីបេះដូង...' }}"
-                        </p>
-                      </div>
-                      <div class="space-y-6">
-                        <div class="bg-primary/5 py-4 rounded-2xl border border-primary/10">
-                          <p class="text-[14px] font-bold text-royal-blue mb-1">
-                            {{ invitationData.date || '២៤ ធ្នូ ២០២៤' }} | {{ invitationData.time || '១៦:៣០' }}
-                          </p>
-                          <p class="text-[10px] uppercase tracking-widest text-charcoal/60">សណ្ឋាគារ រ៉េស៊ីដង់ សុខា</p>
-                        </div>
-                        <button
-                          class="w-full py-4 bg-primary text-white text-[11px] font-bold rounded-full shadow-lg">ឆ្លើយតបការអញ្ជើញ</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer class="mt-20 py-20 px-6 bg-royal-blue text-white relative overflow-hidden">
-      <div class="romduol-pattern opacity-10"></div>
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 relative z-10">
-        <div class="flex items-center gap-4">
-          <div class="w-14 h-14 rounded-full border border-primary/30 flex items-center justify-center text-primary">
-            <span class="material-symbols-outlined text-3xl">camera_alt</span>
-          </div>
-          <div>
-            <p class="text-2xl font-moul text-primary">ETERNAL KHMER</p>
-            <p class="text-[10px] uppercase tracking-[0.4em] text-white/50">Professional Wedding Services</p>
-=======
       </div>
 
       <div class="flex flex-col items-center">
@@ -468,7 +345,6 @@ watch(() => invitationData.value.customColor, (newColor) => {
                 អញ្ជើញចូលរួម
               </button>
             </div>
->>>>>>> origin/develop2
           </div>
           <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-800 rounded-b-xl"></div>
         </div>
