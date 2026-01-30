@@ -402,7 +402,6 @@ input:focus {
   --tw-ring-color: var(--focus-color) !important;
 }
 
-
 input[data-color] {
   --focus-color: attr(data-color);
 }
