@@ -6,6 +6,7 @@
     <GallerySection />
     <!-- <PackageSection/> -->
     <GuestInvitationForm />
+     <ScheduleSection />
     <Map />
   </div>
 </template>
@@ -18,5 +19,6 @@ import PackageSection from '~/components/home/PackageSection.vue'
 import GuestInvitationForm from '~/components/home/GuestInvitationForm.vue'
 import HighlightSection from '~/components/home/HighlightSection.vue'
 import Map from '~/components/home/Map.vue'
+import ScheduleSection from '~/components/home/ScheduleSection.vue'
 
 </script>

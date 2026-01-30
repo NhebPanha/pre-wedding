@@ -90,7 +90,6 @@ const themes = [
                 </div>
               </div>
             </section>
-
             <section class="premium-card">
               <div class="kbach-ornament"></div>
               <div class="p-10">
@@ -112,7 +111,6 @@ const themes = [
                 </div>
               </div>
             </section>
-
             <section class="premium-card">
               <div class="kbach-ornament"></div>
               <div class="p-10">
@@ -164,7 +162,6 @@ const themes = [
                   <div class="w-1 h-1 rounded-full bg-primary/40"></div>
                 </div>
               </div>
-
               <div class="phone-mockup">
                 <div class="phone-notch"></div>
                 <div class="phone-screen">
@@ -214,7 +211,6 @@ const themes = [
         </div>
       </div>
     </main>
-
     <footer class="mt-20 py-20 px-6 bg-royal-blue text-white relative overflow-hidden">
       <div class="romduol-pattern opacity-10"></div>
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 relative z-10">
