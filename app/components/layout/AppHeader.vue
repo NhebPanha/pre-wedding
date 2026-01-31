@@ -18,7 +18,7 @@ const router = useRouter()
 /* ================= DATA ================= */
 const navLinks = [
   { id: 1, label: 'មើលស្នាដៃ', to: '/' },
-  { id: 2, label: 'កញ្ចប់សេវាកម្ម', to: '/gallery' },
+  { id: 2, label: 'រូបភាពទាំងអស់', to: '/gallery' },
   { id: 3, label: 'លិខិតអញ្ជើញ', to: '/services' },
   { id: 4, label: 'ទំនាក់ទំនង', to: '/contact' }
 ]
