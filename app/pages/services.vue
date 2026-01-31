@@ -179,27 +179,27 @@ watch(() => invitationData.value.customColor, (newColor) => {
           </div>
         </div>
 
-        <div class="bg-white rounded-xl shadow-sm border overflow-hidden" :style="{ borderColor: lighterColor }">
+        <div class="bg-white  rounded-xl shadow-sm border overflow-hidden" :style="{ borderColor: lighterColor }">
           <div class="p-1" :style="{ background: `linear-gradient(to right, ${currentThemeColor}40, ${currentThemeColor}10)` }"></div>
           <div class="p-6">
             <div class="flex items-center gap-2 mb-6">
               <span class="material-symbols-outlined" :style="{ color: currentThemeColor }">palette</span>
               <h3 class="font-moul text-lg" :style="{ color: currentThemeColor }">ជ្រើសរើសម៉ូដរចនា</h3>
             </div>
-            <div class="flex gap-4">
+            <div class="grid grid-cols-3 md:grid-cols-4 gap-4">
               <div 
                 v-for="t in themes" 
                 :key="t.id" 
                 @click="invitationData.theme = t.id"
                 :class="[invitationData.theme === t.id ? 'ring-2' : 'border-transparent']"
-                class="flex-1 cursor-pointer border-2 rounded-xl p-4 text-center transition-all bg-gray-50"
+                class="flex-1 flex-wrap  cursor-pointer border-2 rounded-xl p-4 text-center transition-all bg-gray-50"
                 :style="invitationData.theme === t.id ? { 
                   borderColor: currentThemeColor,
                   
                 } : {}"
               >
                 <div 
-                  class="w-12 h-12 mx-auto rounded-lg mb-2 flex items-center justify-center text-white"
+                  class="w-12 h-12 mx-auto rounded-lg mb-2  flex items-center justify-center text-white"
                   :style="{ 
                     backgroundColor: t.id === 'custom' ? invitationData.customColor : t.color
                   }"
