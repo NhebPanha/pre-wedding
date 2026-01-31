@@ -22,6 +22,7 @@ const openFilePicker = () => {
   fileInput.value?.click()
 }
 
+
 const handleFileChange = (event: Event) => {
   const target = event.target as HTMLInputElement
   if (!target.files) return
