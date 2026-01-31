@@ -17,11 +17,9 @@ const form = reactive({
 
 /* ===================== File Upload ===================== */
 const fileInput = ref<HTMLInputElement | null>(null)
-
 const openFilePicker = () => {
   fileInput.value?.click()
 }
-
 
 const handleFileChange = (event: Event) => {
   const target = event.target as HTMLInputElement

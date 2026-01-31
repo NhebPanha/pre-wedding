@@ -65,7 +65,7 @@ onMounted(() => {
 
             <!-- Heart Divider -->
             <div
-              class="flex items-center justify-center gap-6 text-[#EBC410] mb-14"
+              class="flex items-center justify-center gap-6 text-[#EBC410] mb-14 "
             >
               <span class="w-24 h-px bg-[#EBC410]/70"></span>
               <span class="text-xl">♥</span>
@@ -73,7 +73,7 @@ onMounted(() => {
             </div>
 
             <!-- Countdown -->
-            <div class="flex justify-center gap-4 flex-wrap">
+            <div class="flex justify-center gap-4 grid-cols-4 px-5">
               <div
                 v-for="(val, unit) in timeLeft"
                 :key="unit"
@@ -101,7 +101,7 @@ onMounted(() => {
         </section>
       </div>
     </header>
-    <section class="py-32 px-6">
+    <section class="py-10 px-6">
       <div class="max-w-6xl mx-auto text-center">
         <!-- title -->
         <h2
@@ -115,9 +115,8 @@ onMounted(() => {
           <span class="w-6 h-6 bg-primary/40 rotate-45"></span>
           <span class="w-24 h-px bg-primary/40"></span>
         </div>
-
         <!-- details -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-20 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
           <div v-for="item in details" :key="item.title" class="space-y-6">
             <!-- icon -->
             <div class="flex justify-center">

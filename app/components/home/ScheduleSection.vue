@@ -64,4 +64,5 @@ import { timelines } from '~/models/mode_home/timeline.model'
             </div>
         </div>
     </section>
+    
 </template>
