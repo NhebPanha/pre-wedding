@@ -71,7 +71,7 @@ onBeforeUnmount(() => {
 
 <template>
   <!-- ================= HEADER ================= -->
-  <header class="sticky top-0 z-50 bg-white border-b">
+  <header class="sticky top-0 z-50 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all border-b">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
 
       <!-- Logo -->
@@ -83,15 +83,15 @@ onBeforeUnmount(() => {
           camera
         </span>
         <div>
-          <h1 class="font-black leading-none">PANHA KHMER</h1>
-          <span class="text-[10px] tracking-widest opacity-70">
+          <h1 class="font-black leading-none  text-black/80 [-webkit-text-stroke:0.5px_white]">PANHA KHMER</h1>
+          <span class="text-[10px] tracking-widest text-black">
             បញ្ញា ខ្មែរ
           </span>
         </div>
       </NuxtLink>
 
       <!-- Nav -->
-      <nav class="hidden lg:flex gap-6">
+      <nav class="hidden lg:flex gap-6 text-black/90">
         <NuxtLink
           v-for="link in navLinks"
           :key="link.id"
