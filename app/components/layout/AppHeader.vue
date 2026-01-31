@@ -90,6 +90,7 @@ onBeforeUnmount(() => {
         </div>
       </NuxtLink>
 
+      
       <!-- Nav -->
       <nav class="hidden lg:flex gap-6 text-black/90">
         <NuxtLink
