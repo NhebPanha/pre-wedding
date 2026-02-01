@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
 <template>
   <!-- ================= HEADER ================= -->
   <header
-    class="sticky top-0 z-50 w-full bg-white/10 backdrop-blur-md border border-white/30 backdrop-blur-md border-b border-yellow-500/30 "
+    class="sticky top-0 z-50 w-full bg-white/10 backdrop-blur-md  bg-white/10 backdrop-blur-md border border-white/10 font-bold rounded-xl hover:bg-white/20 transition-all"
     :class="{ 'shadow-md': menuOpen }"
   >
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -178,7 +178,7 @@ onBeforeUnmount(() => {
     <transition name="slide">
       <nav
         v-if="menuOpen"
-        class="lg:hidden px-4 py-4 border-t bg-white/10 backdrop-blur-md border border-white/30"
+        class="lg:hidden px-4 py-4 border-t bg-white/10 backdrop-blur-md border border-white/30 font-bold rounded-xl hover:bg-white/20 transition-all"
       >
         <NuxtLink
           v-for="link in navLinks"
