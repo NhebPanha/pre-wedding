@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
 <template>
   <!-- ================= HEADER ================= -->
   <header
-    class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-yellow-500/30"
+    class="sticky top-0 z-50 w-full bg-white/10 backdrop-blur-md border border-white/30 backdrop-blur-md border-b border-yellow-500/30 "
     :class="{ 'shadow-md': menuOpen }"
   >
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
       </NuxtLink>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex gap-6">
+      <nav class="hidden lg:flex gap-6 ">
         <NuxtLink
           v-for="link in navLinks"
           :key="link.id"
@@ -179,7 +179,7 @@ onBeforeUnmount(() => {
     <transition name="slide">
       <nav
         v-if="menuOpen"
-        class="lg:hidden px-4 py-4 bg-white border-t"
+        class="lg:hidden px-4 py-4 border-t bg-white/10 backdrop-blur-md border border-white/30"
       >
         <NuxtLink
           v-for="link in navLinks"
