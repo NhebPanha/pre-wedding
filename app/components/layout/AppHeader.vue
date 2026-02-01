@@ -174,7 +174,6 @@ onBeforeUnmount(() => {
 
       </div>
     </div>
-
     <!-- Mobile Menu -->
     <transition name="slide">
       <nav
