@@ -1,7 +1,11 @@
-<script setup>
-const guestName = ref("ភ្ញៀវកិត្តិយស");
-const attendance = ref("yes");
+<script setup lang="ts">
+import { ref, onMounted, watch } from "vue";
+
+const route = useRoute();
+
+const guestName = ref("");
 const guestCount = ref(1);
+const attend = ref("yes");
 
 // Countdown Logic
 const timeLeft = ref({ days: "00", hours: "00", mins: "00", secs: "00" });
@@ -28,6 +32,73 @@ onMounted(() => {
     };
   }, 1000);
 });
+
+const handleSubmit = () => {
+  const payload = {
+    name: guestName.value,
+    count: guestCount.value,
+    attend: attend.value,
+  };
+
+  console.log(payload);
+  // send to Supabase / API here
+};
+
+const details = [
+  {
+    title: "កាលបរិច្ឆេទ",
+    icon: "calendar_today",
+    desc: "ថ្ងៃព្រហស្បត្តិ៍ ទី១២ ខែកុម្ភៈ ឆ្នាំ២០២៦ <br/> <small> </small>",
+  },
+  {
+    title: "ម៉ោងពេល",
+    icon: "history_toggle_off",
+    desc: "ចាប់ផ្ដើមទទួលភ្ញៀវ <br/> <strong>០៥​:៣០ ល្ងាច</strong>",
+  },
+  {
+    title: "ទីតាំង",
+    icon: "distance",
+    desc: "ភូមិ នាងទើត​​ ឃុំ នាងទើត  <br/> ស្រុកតំបែរ",
+  },
+];
+
+const getGuestNameFromToken = (token: string) => {
+  if (!process.client) return "";
+  try {
+    const raw = localStorage.getItem("guestTokens");
+    if (!raw) return "";
+    const map = JSON.parse(raw);
+    return typeof map[token] === "string" ? map[token] : "";
+  } catch {
+    return "";
+  }
+};
+
+const setGuestNameFromRoute = () => {
+  const paramName = route.params?.name;
+  const queryName = route.query?.name;
+
+  const rawName = Array.isArray(paramName)
+    ? paramName[0]
+    : Array.isArray(queryName)
+      ? queryName[0]
+      : paramName ?? queryName;
+
+  if (typeof rawName === "string" && rawName.trim() !== "") {
+    const decoded = getGuestNameFromToken(rawName.trim());
+    if (decoded) {
+      guestName.value = decoded;
+    }
+  }
+};
+
+watch(
+  () => [route.params?.name, route.query?.name],
+  () => {
+    setGuestNameFromRoute();
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
@@ -258,39 +329,3 @@ onMounted(() => {
     </section>
   </div>
 </template>
-
-<script>
-import { ref } from "vue";
-
-const guestName = ref("");
-const guestCount = ref(1);
-const attend = ref("yes");
-
-const handleSubmit = () => {
-  const payload = {
-    name: guestName.value,
-    count: guestCount.value,
-    attend: attend.value,
-  };
-
-  console.log(payload);
-  // send to Supabase / API here
-};
-const details = [
-  {
-    title: "កាលបរិច្ឆេទ",
-    icon: "calendar_today",
-    desc: "ថ្ងៃព្រហស្បតិ៍ ១០រោច ខែមាឃ ឆ្នាំម្សាញ់ សប្តស័ក ពុទ្ធសករាជ ២៥៦៩<br/> <small>ត្រូវនឹងថ្ងៃទី១២ ខែកុម្ភៈ ឆ្នាំ២០២៦</small>",
-  },
-  {
-    title: "ម៉ោងពេល",
-    icon: "history_toggle_off",
-    desc: "ចាប់ផ្ដើមទទួលភ្ញៀវ <br/> <strong>០៥​:៣០ ល្ងាច</strong>",
-  },
-  {
-    title: "ទីតាំង",
-    icon: "distance",
-    desc: "ភូមិ ចំបក់​​ ឃុំ នាងទើត <br/> ស្រុកតំបែរ​ ត្បូងឃ្មុំ <small>ត្បូងឃ្មុំ</small>",
-  },
-];
-</script>

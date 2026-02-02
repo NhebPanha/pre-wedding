@@ -55,7 +55,7 @@ const submitForm = () => {
       <!-- Header -->
       <header class="mb-8 text-center">
         <span class="material-icons-outlined block text-4xl text-primary">
-          spa
+    
         </span>
         <h1 class="font-moul mt-2 text-xl">
           ព័ត៌មានសម្រាប់ការថតរូប Pre-Wedding
@@ -66,7 +66,7 @@ const submitForm = () => {
       </header>
 
       <!-- Card -->
-      <section class="glass rounded-2xl border border-gray-100 p-6 shadow-xl">
+      <section class="glass rounded-2xl border border-gray-100 bg-white p-6 shadow-xl">
 
         <form class="space-y-8" @submit.prevent="submitForm">
 

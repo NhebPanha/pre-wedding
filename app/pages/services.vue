@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
 
+const router = useRouter();
+
 const invitationData = ref({
   groomName: '',
   brideName: '',
@@ -21,11 +23,63 @@ const themes = [
 
 const guestName = ref('');
 const guestList = ref<{name: string}[]>([]);
-const addGuest = () => {
-  if (guestName.value) {
-    guestList.value.push({ name: guestName.value });
-    guestName.value = '';
+const generateShortToken = (length = 6) => {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let token = '';
+  for (let i = 0; i < length; i += 1) {
+    token += chars[Math.floor(Math.random() * chars.length)];
   }
+  return token;
+};
+
+const lastGuestToken = ref('');
+
+const saveGuestToken = (token: string, name: string) => {
+  if (!process.client) return;
+  const raw = localStorage.getItem('guestTokens');
+  const map = raw ? JSON.parse(raw) : {};
+  map[token] = name;
+  localStorage.setItem('guestTokens', JSON.stringify(map));
+};
+
+const addGuest = () => {
+  const name = guestName.value.trim();
+  if (!name) return;
+
+  guestList.value.push({ name });
+  const token = generateShortToken();
+  saveGuestToken(token, name);
+  lastGuestToken.value = token;
+  router.push(`/contact/${token}`);
+};
+
+const copyInviteLink = async () => {
+  if (!process.client) return;
+  const token = lastGuestToken.value || generateShortToken();
+  if (!lastGuestToken.value) {
+    lastGuestToken.value = token;
+  }
+  const url = `${window.location.origin}/contact/${token}`;
+  try {
+    await navigator.clipboard.writeText(url);
+  } catch {
+    const textarea = document.createElement('textarea');
+    textarea.value = url;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+  }
+};
+
+const createAndCopyLink = async () => {
+  const name = guestName.value.trim() || 'ភ្ញៀវកិត្តិយស';
+  const token = generateShortToken();
+  saveGuestToken(token, name);
+  lastGuestToken.value = token;
+  await copyInviteLink();
 };
 
 
@@ -383,6 +437,7 @@ watch(() => invitationData.value.customColor, (newColor) => {
           color: isLightColor ? '#000000' : '#FFFFFF',
           boxShadow: `0 10px 25px ${currentThemeColor}40`
         }"
+        @click="createAndCopyLink"
       >
         បង្កើត និងរក្សាទុក
       </button>
