@@ -6,7 +6,7 @@
 
     <div class="relative max-w-7xl mx-auto">
 
-      <!-- Title -->
+      <!-- Title hello-->
       <div class="text-center mb-16">
         <SectionTitle title="ជ្រើសរើសកញ្ចប់សេវាកម្ម" subtitle="Pre-Wedding & Wedding Photography" />
 
@@ -15,6 +15,7 @@
           <span class="w-20 h-[3px] bg-yellow-400 rounded-full"></span>
         </div>
       </div>
+      
 
       <!-- Packages -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">

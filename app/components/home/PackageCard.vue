@@ -6,7 +6,6 @@
     <AppButton class="mt-2" label="កក់ឥឡូវនេះ" />
   </CardWrapper>
 </template>
-
 <script setup>
 defineProps({
   pkg: Object

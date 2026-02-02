@@ -2,8 +2,8 @@
   <section class="bg-[#F9F7EF] py-20 px-6 lg:px-20 min-h-screen flex items-center">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
       
-      <div class="space-y-8">
-        <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+      <div class="space-y-15">
+        <h1 class="text-2xl lg:text-2xl font-extrabold text-slate-900 leading-tight">
           ដំណើរនៃក្តីស្រលាញ់របស់អ្នកចាប់ផ្តើមនៅទីនេះ
         </h1>
         
@@ -39,8 +39,8 @@
         </div>
       </div>
 
-      <div class="bg-white p-10 md:p-14 rounded-[20px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white">
-        <h3 class="text-2xl font-bold mb-8 text-slate-800">សាកសួរអំពីកាលបរិច្ឆេទរបស់អ្នក</h3>
+      <div class="bg-white p-10 md:p-14 rounded-[20px] shadow-[0_20px_50px_rgba(0, 0, 0, 0.05)] border border-white">
+        <h3 class="text-2xl font-bold mb-8 text-slate-800 text-color-[0_20px_50px_rgba(0, 21, 255, 0.05)]">សាកសួរអំពីកាលបរិច្ឆេទរបស់អ្នក</h3>
         
         <form class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
