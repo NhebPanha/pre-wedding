@@ -7,6 +7,7 @@ const route = useRoute()
 const router = useRouter()
 
 /* ================= STATE ================= */
+// login account
 const menuOpen = ref(false)
 const userMenuOpen = ref(false)
 const loginOpen = ref(false)
@@ -15,6 +16,22 @@ const loginForm = ref({
   email: '',
   password: ''
 })
+
+// register account
+const registerOpen = ref(false)
+const loading = ref(false)
+const showPassword = ref(false)
+const showConfirm = ref(false)
+const form = ref({
+  name: '',
+  email: '',
+  phone: '',
+  password: '',
+  confirmPassword: ''
+})
+
+const error = ref('')
+
 
 const userMenuRef = ref<HTMLElement | null>(null)
 
@@ -63,6 +80,50 @@ const handleClickOutside = (e: MouseEvent) => {
   ) {
     userMenuOpen.value = false
   }
+}
+
+const openRegisterFromLogin = () => {
+  loginOpen.value = false
+  registerOpen.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+/* ===== OPEN / CLOSE Register account ===== */
+const openRegister = () => {
+  registerOpen.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+const closeRegister = () => {
+  registerOpen.value = false
+  document.body.style.overflow = ''
+}
+
+/* ===== SUBMIT ===== */
+const submitRegister = async () => {
+  error.value = ''
+
+  if (form.value.password !== form.value.confirmPassword) {
+    error.value = 'ពាក្យសម្ងាត់មិនត្រូវគ្នា'
+    return
+  }
+
+  loading.value = true
+
+  // 🔐 API later
+  console.log('REGISTER:', form.value)
+
+  setTimeout(() => {
+    loading.value = false
+    closeRegister()
+    router.push('/') // or auto login
+  }, 1000)
+}
+
+const openLoginFromRegister = () => {
+  registerOpen.value = false
+  loginOpen.value = true
+  document.body.style.overflow = 'hidden'
 }
 
 onMounted(() => {
@@ -303,18 +364,206 @@ onBeforeUnmount(() => {
         <!-- Register -->
         <p class="text-center text-sm text-gray-500">
           មិនទាន់មានគណនី?
-          <NuxtLink
-            to="/register"
+          <button
+            type="button"
             class="text-yellow-600 font-bold hover:underline"
+            @click="openRegisterFromLogin"
           >
             បង្កើតថ្មី
-          </NuxtLink>
+          </button>
         </p>
 
       </form>
     </div>
   </div>
 </transition>
+
+<!-- ================= REGISTER MODAL ================= -->
+<transition name="fade">
+  <div
+    v-if="registerOpen"
+    class="fixed inset-0 z-[100]
+           bg-black/50 backdrop-blur-sm
+           flex items-center justify-center px-4"
+    @click="closeRegister"
+  >
+    <div
+      class="w-full max-w-md bg-white rounded-2xl
+             shadow-2xl p-8 relative"
+      role="dialog"
+      aria-modal="true"
+      @click.stop
+    >
+      <!-- Close -->
+      <button
+        type="button"
+        class="absolute top-4 right-4 text-gray-400 hover:text-red-500"
+        @click="closeRegister"
+      >
+        <span class="material-symbols-outlined">close</span>
+      </button>
+
+      <!-- Title -->
+      <div class="text-center mb-6">
+        <span class="material-symbols-outlined text-4xl text-yellow-500">
+          person_add
+        </span>
+        <h2 class="text-2xl font-bold mt-2">បង្កើតគណនី</h2>
+        <p class="text-sm text-gray-500">
+          សូមបំពេញព័ត៌មានដើម្បីបង្កើតគណនីថ្មី
+        </p>
+      </div>
+
+      <!-- Error -->
+      <p
+        v-if="error"
+        class="mb-4 text-sm text-red-500 text-center"
+      >
+        {{ error }}
+      </p>
+
+      <!-- Form -->
+      <form class="space-y-2" @submit.prevent="submitRegister">
+
+        <!-- Name -->
+        <div>
+          <label class="block text-sm font-semibold">
+            ឈ្មោះពេញ
+          </label>
+          <input
+            v-model.trim="form.name"
+            required
+            class="w-full mt-2 px-4 py-3 border rounded-xl
+                   focus:ring-2 focus:ring-yellow-500
+                   focus:border-yellow-500
+                   outline-none transition"
+            placeholder="បញ្ចូលឈ្មោះ"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-sm font-semibold">
+            អ៊ីមែល
+          </label>
+          <input
+            v-model.trim="form.email"
+            type="email"
+            required
+            class="w-full mt-2 px-4 py-3 border rounded-xl
+                   focus:ring-2 focus:ring-yellow-500
+                   focus:border-yellow-500
+                   outline-none transition"
+            placeholder="example@email.com"
+          />
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label class="block text-sm font-semibold">
+            លេខទូរស័ព្ទ
+          </label>
+          <input
+            v-model.trim="form.phone"
+            type="tel"
+            required
+            class="w-full mt-2 px-4 py-3 border rounded-xl
+                   focus:ring-2 focus:ring-yellow-500
+                   focus:border-yellow-500
+                   outline-none transition"
+            placeholder="0XX XXX XXX"
+          />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-sm font-semibold">
+            ពាក្យសម្ងាត់
+          </label>
+          <div class="relative">
+            <input
+              v-model="form.password"
+              :type="showPassword ? 'text' : 'password'"
+              minlength="6"
+              required
+              class="w-full mt-2 px-4 py-3 border rounded-xl
+                   focus:ring-2 focus:ring-yellow-500
+                   focus:border-yellow-500
+                   outline-none transition"
+              placeholder="********"
+            />
+            <button
+              type="button"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+              @click="showPassword = !showPassword"
+            >
+              <span class="material-symbols-outlined text-sm">
+                {{ showPassword ? 'visibility_off' : 'visibility' }}
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm -->
+        <div>
+          <label class="block text-sm font-semibold">
+            បញ្ជាក់ពាក្យសម្ងាត់
+          </label>
+          <div class="relative">
+            <input
+              v-model="form.confirmPassword"
+              :type="showConfirm ? 'text' : 'password'"
+              minlength="6"
+              required
+              class="w-full mt-2 px-4 py-3 border rounded-xl
+                   focus:ring-2 focus:ring-yellow-500
+                   focus:border-yellow-500
+                   outline-none transition"
+              placeholder="********"
+            />
+            <button
+              type="button"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+              @click="showConfirm = !showConfirm"
+            >
+              <span class="material-symbols-outlined text-sm">
+                {{ showConfirm ? 'visibility_off' : 'visibility' }}
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          :disabled="loading"
+          class="w-full py-3 bg-gradient-to-r
+                 from-yellow-500 to-yellow-600
+                 hover:from-yellow-600 hover:to-yellow-700
+                 text-black font-bold rounded-xl shadow-lg
+                 transition active:scale-95
+                 disabled:opacity-50"
+        >
+          {{ loading ? 'កំពុងបង្កើត...' : 'បង្កើតគណនី' }}
+        </button>
+
+        <!-- Switch to login -->
+        <p class="text-center text-sm text-gray-500">
+          មានគណនីរួចហើយ?
+          <button
+            type="button"
+            class="text-yellow-600 font-bold hover:underline"
+            @click="openLoginFromRegister"
+          >
+            ចូលគណនី
+          </button>
+        </p>
+
+      </form>
+    </div>
+  </div>
+</transition>
+
 
 </template>
 
@@ -337,5 +586,12 @@ onBeforeUnmount(() => {
 .slide-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+}
+
+.input {
+  @apply w-full mt-2 px-4 py-3 border rounded-xl
+         focus:ring-2 focus:ring-yellow-500
+         focus:border-yellow-500
+         outline-none transition;
 }
 </style>
