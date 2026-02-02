@@ -38,9 +38,9 @@ const userMenuRef = ref<HTMLElement | null>(null)
 /* ================= NAV ================= */
 const navLinks = [
   { id: 1, label: 'មើលស្នាដៃ', to: '/', icon: 'home' },
-  { id: 2, label: 'កញ្ចប់សេវាកម្ម', to: '/gallery', icon: 'collections' },
+  { id: 2, label: 'រូបភាពទាំងអស់', to: '/gallery', icon: 'collections' },
   { id: 3, label: 'លិខិតអញ្ជើញឌីជីថល', to: '/services', icon: 'package' },
-  { id: 4, label: 'មតិអតិថិជន', to: '/contact', icon: 'mail' }
+  { id: 4, label: 'ភ្ញៀវកេត្តិយស', to: '/contact', icon: 'mail' }
 ]
 
 const isActive = (path: string) => route.path === path
