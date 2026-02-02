@@ -150,7 +150,6 @@ onMounted(() => {
         </div>
       </div>
     </section>
-
     <section class="flex items-center justify-center px-4">
       <form
         @submit.prevent="handleSubmit"
@@ -196,7 +195,6 @@ onMounted(() => {
           <p class="text-sm text-[#C9A63A] mb-6">
             តើលោក/លោកស្រី នឹងអញ្ជើញចូលរួមទេ?
           </p>
-
           <div class="flex justify-center gap-10">
             <label class="flex items-center gap-3 cursor-pointer">
               <input
@@ -282,7 +280,7 @@ const details = [
   {
     title: "កាលបរិច្ឆេទ",
     icon: "calendar_today",
-    desc: "ថ្ងៃព្រហស្បត្តិ៍ ទី១២ ខែកុម្ភៈ ឆ្នាំ២០២៦ <br/> <small> </small>",
+    desc: "ថ្ងៃព្រហស្បតិ៍ ១០រោច ខែមាឃ ឆ្នាំម្សាញ់ សប្តស័ក ពុទ្ធសករាជ ២៥៦៩<br/> <small>ត្រូវនឹងថ្ងៃទី១២ ខែកុម្ភៈ ឆ្នាំ២០២៦</small>",
   },
   {
     title: "ម៉ោងពេល",
@@ -292,7 +290,7 @@ const details = [
   {
     title: "ទីតាំង",
     icon: "distance",
-    desc: "ភូមិ នាងទើត​​ ឃុំ នាងទើត  <br/> ស្រុកតំបែរ",
+    desc: "ភូមិ ចំបក់​​ ឃុំ នាងទើត <br/> ស្រុកតំបែរ​ ត្បូងឃ្មុំ <small>ត្បូងឃ្មុំ</small>",
   },
 ];
 </script>

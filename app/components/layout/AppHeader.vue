@@ -57,7 +57,7 @@
         </div>
         <!-- Mobile Menu Button -->
         <button
-          class="lg:hidden p-2 rounded-md text-red-500 dark:text-white hover:bg-yellow-300 dark:hover:bg-yellow-700 transition-colors duration-200 ml-1"
+          class="lg:hidden bg-background-light p-2 rounded-md text-red-500  hover:bg-yellow-300 dark:hover:bg-yellow-700 transition-colors duration-200 ml-1"
           @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" :aria-label="menuOpen ? 'Close menu' : 'Open menu'">
           <span class="material-symbols-outlined text-2xl text-yellow-500">
             {{ menuOpen ? 'close' : 'menu' }}
