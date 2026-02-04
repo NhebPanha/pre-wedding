@@ -15,14 +15,12 @@
           <span class="w-20 h-[3px] bg-yellow-400 rounded-full"></span>
         </div>
       </div>
-      
 
       <!-- Packages -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
         <PackageCard v-for="pkg in packages" :key="pkg.id" :pkg="pkg"
           class="transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" />
       </div>
-
       <!-- Bottom CTA -->
       <div class="mt-20 text-center">
         <p class="text-gray-500 mb-6">
