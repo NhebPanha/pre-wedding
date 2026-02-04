@@ -7,6 +7,7 @@ const route = useRoute()
 const router = useRouter()
 
 /* ================= STATE ================= */
+
 // login account
 const menuOpen = ref(false)
 const userMenuOpen = ref(false)
@@ -30,6 +31,7 @@ const form = ref({
   confirmPassword: ''
 })
 
+// check error register
 const error = ref('')
 
 
@@ -70,6 +72,7 @@ const handleBooking = () => {
   menuOpen.value = false
   router.push('/booking/Booking')
 }
+
 
 /* ================= CLICK OUTSIDE ================= */
 const handleClickOutside = (e: MouseEvent) => {
@@ -472,7 +475,7 @@ onBeforeUnmount(() => {
                    focus:border-yellow-500
                    outline-none transition"
             placeholder="0XX XXX XXX"
-          />
+            />
         </div>
 
         <!-- Password -->

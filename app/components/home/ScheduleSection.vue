@@ -54,15 +54,11 @@ import { timelines } from '~/models/mode_home/timeline.model'
                             <p class="text-sm leading-relaxed dark:text-black/80">
                                 {{ item.description }}
                             </p>
-
-
-
-                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
 </template>
