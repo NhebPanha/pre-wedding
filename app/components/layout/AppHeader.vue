@@ -1,169 +1,172 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-/* ================= ROUTER ================= */
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
 
 /* ================= STATE ================= */
 
-// login account
-const menuOpen = ref(false)
-const userMenuOpen = ref(false)
-const loginOpen = ref(false)
+const menuOpen = ref(false);
+const userMenuOpen = ref(false);
+
+const loginOpen = ref(false);
+const registerOpen = ref(false);
 
 const loginForm = ref({
-  email: '',
-  password: ''
-})
+  email: "",
+  password: "",
+});
 
-// register account
-const registerOpen = ref(false)
-const loading = ref(false)
-const showPassword = ref(false)
-const showConfirm = ref(false)
 const form = ref({
-  name: '',
-  email: '',
-  phone: '',
-  password: '',
-  confirmPassword: ''
-})
+  name: "",
+  email: "",
+  phone: "",
+  password: "",
+  confirmPassword: "",
+});
 
-// check error register
-const error = ref('')
+const loading = ref(false);
+const showPassword = ref(false);
+const showConfirm = ref(false);
+const error = ref("");
 
-
-const userMenuRef = ref<HTMLElement | null>(null)
+const userMenuRef = ref<HTMLElement | null>(null);
 
 /* ================= NAV ================= */
+
 const navLinks = [
-  { id: 1, label: 'មើលស្នាដៃ', to: '/', icon: 'home' },
-  { id: 2, label: 'កញ្ចប់សេវាកម្ម', to: '/gallery', icon: 'collections' },
-  { id: 3, label: 'លិខិតអញ្ជើញឌីជីថល', to: '/services', icon: 'package' },
-  { id: 4, label: 'មតិអតិថិជន', to: '/contact', icon: 'mail' }
-]
+  { id: 1, label: "មើលស្នាដៃ", to: "/", icon: "home" },
+  { id: 2, label: "កញ្ចប់សេវាកម្ម", to: "/gallery", icon: "collections" },
+  { id: 3, label: "លិខិតអញ្ជើញឌីជីថល", to: "/services", icon: "package" },
+  { id: 4, label: "មតិអតិថិជន", to: "/contact", icon: "mail" },
+];
 
-const isActive = (path: string) => route.path === path
+const isActive = (path: string) => route.path === path;
 
-/* ================= METHODS ================= */
+/* ================= MENU ================= */
+
 const toggleUserMenu = () => {
-  userMenuOpen.value = !userMenuOpen.value
-}
+  userMenuOpen.value = !userMenuOpen.value;
+};
+
+/* ================= LOGIN ================= */
 
 const openLogin = () => {
-  userMenuOpen.value = false
-  loginOpen.value = true
-  document.body.style.overflow = 'hidden'
-}
+  userMenuOpen.value = false;
+  registerOpen.value = false;
+  loginOpen.value = true;
+  document.body.style.overflow = "hidden";
+};
 
 const closeLogin = () => {
-  loginOpen.value = false
-  document.body.style.overflow = ''
-}
+  loginOpen.value = false;
+  document.body.style.overflow = "";
+};
 
 const submitLogin = () => {
-  console.log('LOGIN:', loginForm.value)
-  closeLogin()
-}
+  console.log("LOGIN:", loginForm.value);
+  closeLogin();
+};
+
+/* ================= REGISTER ================= */
+
+const openRegister = () => {
+  userMenuOpen.value = false;
+  loginOpen.value = false;
+  registerOpen.value = true;
+  document.body.style.overflow = "hidden";
+};
+
+const closeRegister = () => {
+  registerOpen.value = false;
+  document.body.style.overflow = "";
+};
+
+const openRegisterFromLogin = () => {
+  loginOpen.value = false;
+  registerOpen.value = true;
+};
+
+const openLoginFromRegister = () => {
+  registerOpen.value = false;
+  loginOpen.value = true;
+};
+
+const submitRegister = async () => {
+  error.value = "";
+
+  if (form.value.password !== form.value.confirmPassword) {
+    error.value = "ពាក្យសម្ងាត់មិនត្រូវគ្នា";
+    return;
+  }
+
+  loading.value = true;
+
+  console.log("REGISTER:", form.value);
+
+  setTimeout(() => {
+    loading.value = false;
+    closeRegister();
+    router.push("/");
+  }, 1000);
+};
+
+/* ================= BOOKING ================= */
 
 const handleBooking = () => {
-  menuOpen.value = false
-  router.push('/booking/Booking')
-}
-
+  menuOpen.value = false;
+  router.push("/booking/Booking");
+};
 
 /* ================= CLICK OUTSIDE ================= */
+
 const handleClickOutside = (e: MouseEvent) => {
   if (
     userMenuOpen.value &&
     userMenuRef.value &&
     !userMenuRef.value.contains(e.target as Node)
   ) {
-    userMenuOpen.value = false
+    userMenuOpen.value = false;
   }
-}
-
-const openRegisterFromLogin = () => {
-  loginOpen.value = false
-  registerOpen.value = true
-  document.body.style.overflow = 'hidden'
-}
-
-/* ===== OPEN / CLOSE Register account ===== */
-const openRegister = () => {
-  registerOpen.value = true
-  document.body.style.overflow = 'hidden'
-}
-
-const closeRegister = () => {
-  registerOpen.value = false
-  document.body.style.overflow = ''
-}
-
-/* ===== SUBMIT ===== */
-const submitRegister = async () => {
-  error.value = ''
-
-  if (form.value.password !== form.value.confirmPassword) {
-    error.value = 'ពាក្យសម្ងាត់មិនត្រូវគ្នា'
-    return
-  }
-
-  loading.value = true
-
-  // 🔐 API later
-  console.log('REGISTER:', form.value)
-
-  setTimeout(() => {
-    loading.value = false
-    closeRegister()
-    router.push('/') // or auto login
-  }, 1000)
-}
-
-const openLoginFromRegister = () => {
-  registerOpen.value = false
-  loginOpen.value = true
-  document.body.style.overflow = 'hidden'
-}
+};
 
 onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
-})
+  document.addEventListener("click", handleClickOutside);
+});
 
 onBeforeUnmount(() => {
-  document.removeEventListener('click', handleClickOutside)
-})
+  document.removeEventListener("click", handleClickOutside);
+});
 </script>
-
 <template>
   <!-- ================= HEADER ================= -->
+
   <header
-    class="sticky top-0 z-50 w-full bg-white/10 backdrop-blur-md  bg-white/10 backdrop-blur-md border border-white/10 font-bold rounded-xl hover:bg-white/20 transition-all"
-    :class="{ 'shadow-md': menuOpen }"
+    class="sticky top-0 z-50 w-full bg-white/10 backdrop-blur-md border border-white/10 font-bold rounded-xl"
   >
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- LOGO -->
 
-      <!-- Logo -->
-      <NuxtLink to="/" class="flex items-center gap-2" @click="menuOpen = false">
+      <NuxtLink to="/" class="flex items-center gap-2">
         <span
           class="material-symbols-outlined text-4xl text-yellow-500"
-          style="font-variation-settings:'FILL' 1"
+          style="font-variation-settings: 'FILL' 1"
         >
           camera
         </span>
+
         <div>
           <h1 class="font-black leading-none text-black">PANHA KHMER</h1>
-          <span class="text-[10px] tracking-widest text-black/70">
-            បញ្ញា ខ្មែរ
-          </span>
+          <span class="text-[10px] tracking-widest text-black/70"
+            >បញ្ញា ខ្មែរ</span
+          >
         </div>
       </NuxtLink>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden lg:flex gap-6 ">
+      <!-- NAV -->
+
+      <nav class="hidden lg:flex gap-6">
         <NuxtLink
           v-for="link in navLinks"
           :key="link.id"
@@ -172,6 +175,7 @@ onBeforeUnmount(() => {
           :class="{ 'text-yellow-500': isActive(link.to) }"
         >
           {{ link.label }}
+
           <span
             class="absolute left-0 -bottom-1 h-0.5 bg-yellow-500 transition-all"
             :class="isActive(link.to) ? 'w-full' : 'w-0'"
@@ -179,31 +183,30 @@ onBeforeUnmount(() => {
         </NuxtLink>
       </nav>
 
-      <!-- Right Section -->
-      <div class="flex items-center gap-3">
+      <!-- RIGHT -->
 
-        <!-- Booking -->
+      <div class="flex items-center gap-3">
         <button
-          class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-yellow-600
-                 text-black px-4 py-2 rounded-lg text-sm font-bold shadow-md"
+          class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black px-4 py-2 rounded-lg text-sm font-bold shadow-md"
           @click="handleBooking"
         >
-          <span class="material-symbols-outlined text-base">
-            calendar_month
-          </span>
+          <span class="material-symbols-outlined text-base"
+            >calendar_month</span
+          >
           ថ្ងៃរៀបការ
         </button>
 
-        <!-- User -->
+        <!-- USER -->
+
         <div class="relative" ref="userMenuRef">
           <div
-            class="w-10 h-10 rounded-full border-2 border-yellow-500
-                   bg-cover bg-center cursor-pointer"
-            style="background-image:url('https://i.pinimg.com/1200x/36/fc/c7/36fcc767ca5725d213dca3d002e23d5a.jpg')"
+            class="w-10 h-10 rounded-full border-2 border-yellow-500 bg-cover bg-center cursor-pointer"
+            style="
+              background-image: url('https://i.pinimg.com/1200x/36/fc/c7/36fcc767ca5725d213dca3d002e23d5a.jpg');
+            "
             @click.stop="toggleUserMenu"
           ></div>
 
-          <!-- Dropdown -->
           <transition name="fade">
             <div
               v-if="userMenuOpen"
@@ -216,48 +219,25 @@ onBeforeUnmount(() => {
                 🔐 Login
               </button>
 
-              <NuxtLink
-                to="/booking/Booking"
-                class="block px-4 py-2 hover:bg-gray-100"
+              <button
+                class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                 @click="router.push('/booking/Booking')"
               >
                 📝 Register
-              </NuxtLink>
+              </button>
             </div>
           </transition>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button
-          class="lg:hidden p-2"
-          @click="menuOpen = !menuOpen"
-        >
+        <!-- MOBILE -->
+
+        <button class="lg:hidden p-2" @click="menuOpen = !menuOpen">
           <span class="material-symbols-outlined text-3xl text-yellow-500">
-            {{ menuOpen ? 'close' : 'menu' }}
+            {{ menuOpen ? "close" : "menu" }}
           </span>
         </button>
-
       </div>
     </div>
-    <!-- Mobile Menu -->
-    <transition name="slide">
-      <nav
-        v-if="menuOpen"
-        class="lg:hidden px-4 py-4 border-t bg-white/10 backdrop-blur-md border border-white/30 font-bold rounded-xl hover:bg-white/20 transition-all"
-      >
-        <NuxtLink
-          v-for="link in navLinks"
-          :key="link.id"
-          :to="link.to"
-          class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100"
-          @click="menuOpen = false"
-        >
-          <span class="material-symbols-outlined">
-            {{ link.icon }}
-          </span>
-          {{ link.label }}
-        </NuxtLink>
-      </nav>
-    </transition>
   </header>
 
   <!-- ================= LOGIN MODAL ================= -->
@@ -566,35 +546,4 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </transition>
-
-
 </template>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.2s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-  transform: translateY(-6px);
-}
-
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.25s ease;
-}
-.slide-enter-from,
-.slide-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-.input {
-  @apply w-full mt-2 px-4 py-3 border rounded-xl
-         focus:ring-2 focus:ring-yellow-500
-         focus:border-yellow-500
-         outline-none transition;
-}
-</style>

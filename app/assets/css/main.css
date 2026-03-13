@@ -345,3 +345,231 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+
+
+/* ================= ROOT COLOR ================= */
+
+:root{
+--primary: #D4AF37;
+--primary-dark: #ca8a04;
+
+--text-main: #111827;
+--text-light: #6b7280;
+
+--glass-bg: rgba(255,255,255,0.1);
+--glass-border: rgba(255,255,255,0.2);
+}
+
+/* ================= GLOBAL STYLE ================= */
+
+body{
+font-family: Inter, sans-serif;
+color: var(--text-main);
+}
+
+/* ================= GLASS EFFECT ================= */
+
+.glass{
+background: var(--glass-bg);
+backdrop-filter: blur(10px);
+border:1px solid var(--glass-border);
+}
+
+/* ================= BUTTON ================= */
+
+.btn-primary{
+@apply px-4 py-2 rounded-lg font-bold shadow-md transition;
+background: linear-gradient(to right,var(--primary),var(--primary-dark));
+color:black;
+}
+
+.btn-primary:hover{
+transform: translateY(-1px);
+}
+
+/* ================= INPUT ================= */
+
+.input{
+@apply w-full mt-2 px-4 py-3 border rounded-xl outline-none transition;
+border-color:#e5e7eb;
+}
+
+.input:focus{
+border-color: var(--primary);
+box-shadow:0 0 0 2px rgba(234,179,8,0.3);
+}
+
+/* ================= CARD ================= */
+
+.card{
+@apply bg-white rounded-2xl shadow-xl p-6;
+}
+
+/* ================= MODAL ================= */
+
+.modal-bg{
+@apply fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center;
+}
+
+/* ================= ANIMATION ================= */
+
+.fade-enter-active,
+.fade-leave-active{
+transition: all .2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to{
+opacity:0;
+transform:translateY(-6px);
+}
+
+.slide-enter-active,
+.slide-leave-active{
+transition: all .25s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to{
+opacity:0;
+transform:translateY(-10px);
+}
+
+
+/* ================= header ================= */
+
+:root{
+  --primary:#D4AF37;
+  --primary-dark:#ca8a04;
+
+  --text-main:#111827;
+  --text-light:#6b7280;
+
+  --glass-bg:rgba(255,255,255,0.1);
+  --glass-border:rgba(255,255,255,0.2);
+}
+
+/* ================= BODY ================= */
+
+body{
+  font-family: Inter, sans-serif;
+  color:var(--text-main);
+}
+
+/* ================= HEADER ================= */
+
+.header-glass{
+  background:var(--glass-bg);
+  backdrop-filter:blur(12px);
+  border:1px solid var(--glass-border);
+}
+
+/* ================= NAV LINK ================= */
+
+.header-link{
+  position:relative;
+  font-weight:600;
+  color:var(--text-main);
+  transition:.2s;
+}
+
+.header-link:hover{
+  color:var(--primary);
+}
+
+.header-link.active{
+  color:var(--primary);
+}
+
+.header-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  height:2px;
+  width:0;
+  background:var(--primary);
+  transition:.25s;
+}
+
+.header-link.active::after{
+  width:100%;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-primary{
+  background:linear-gradient(to right,var(--primary),var(--primary-dark));
+  color:black;
+  padding:8px 16px;
+  border-radius:10px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  transition:.2s;
+}
+
+.btn-primary:hover{
+  transform:translateY(-1px);
+}
+
+/* ================= AVATAR ================= */
+
+.avatar{
+  border:2px solid var(--primary);
+}
+
+/* ================= MODAL ================= */
+
+.modal-bg{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ================= INPUT ================= */
+
+.input{
+  width:100%;
+  margin-top:6px;
+  padding:12px 16px;
+  border-radius:12px;
+  border:1px solid #e5e7eb;
+  transition:.2s;
+}
+
+.input:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 2px rgba(212,175,55,.3);
+  outline:none;
+}
+
+/* ================= ANIMATION ================= */
+
+.fade-enter-active,
+.fade-leave-active{
+  transition:.2s;
+}
+
+.fade-enter-from,
+.fade-leave-to{
+  opacity:0;
+  transform:translateY(-6px);
+}
+
+.slide-enter-active,
+.slide-leave-active{
+  transition:.25s;
+}
+
+.slide-enter-from,
+.slide-leave-to{
+  opacity:0;
+  transform:translateY(-10px);
+}

@@ -177,7 +177,7 @@ const submitForm = () => {
 
             <button
               type="submit"
-              class="flex-[1.5] rounded-xl bg-primary py-3 font-bold text-white"
+              class="flex-[1.5] rounded-xl bg-primary py-3 font-bold text-yellow-500"
             >
               បន្ទាប់ →
             </button>
