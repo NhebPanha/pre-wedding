@@ -221,7 +221,6 @@ watch(
         </div>
       </div>
     </section>
-
     <section class="flex items-center justify-center px-4">
       <form
         @submit.prevent="handleSubmit"
@@ -267,7 +266,6 @@ watch(
           <p class="text-sm text-[#C9A63A] mb-6">
             តើលោក/លោកស្រី នឹងអញ្ជើញចូលរួមទេ?
           </p>
-
           <div class="flex justify-center gap-10">
             <label class="flex items-center gap-3 cursor-pointer">
               <input
